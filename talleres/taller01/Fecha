@@ -1,0 +1,21 @@
+public class Fecha{
+  private dia, mes, año;
+
+  public Fecha(long dia, long mes, long año){
+  
+  }
+  
+  public void compararFechas(Fecha otraFecha){
+    if (otraFecha.dia == dia && otraFecha.mes == mes && otraFecha.año == año){
+      System.out.println("Las fechas coinciden");
+    }
+    else
+      System.out.println("Las fechas NO coinciden);  
+  }
+
+  public void toString(){
+    String texto = "";
+    texto = texto + dia +"/"+ mes +"/"+ año
+    System.out.println(texto);
+  }
+ }
