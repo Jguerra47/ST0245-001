@@ -1,21 +1,52 @@
 public class Fecha{
-  private dia, mes, año;
+  private final int dia, mes, año;
 
-  public Fecha(long dia, long mes, long año){
-  
+  public Fecha(int dia, int mes, int año){
+    this.dia = dia;
+    this.mes = mes;
+    this.año = año;
+  }
+
+  //Getters
+  public int getDia(){
+    return this.dia;
+  }
+
+  public int getMes(){
+    return this.mes;
+  }
+
+  public int getAño(){
+    return this.año;
   }
   
-  public void compararFechas(Fecha otraFecha){
-    if (otraFecha.dia == dia && otraFecha.mes == mes && otraFecha.año == año){
-      System.out.println("Las fechas coinciden");
+  public int compararFechas(Fecha otraFecha){
+    if (otraFecha.año > this.año){
+      return -1;
     }
-    else
-      System.out.println("Las fechas NO coinciden);  
+    else if (otraFecha.año < this.año){
+      return 1;
+    }
+    if (otraFecha.mes > this.mes){
+      return -1;
+    }
+    else if (otraFecha.mes < this.mes){
+      return 1;
+    }
+    if (otraFecha.dia > this.dia){
+      return -1;
+    }
+    else if (otraFecha.dia < this.dia){
+      return 1;
+    }    
+    else{
+      return 0;
+    }
   }
 
-  public void toString(){
+  public String toString(){
     String texto = "";
-    texto = texto + dia +"/"+ mes +"/"+ año
-    System.out.println(texto);
+    texto = texto + dia +"/"+ mes +"/"+ año;
+    return texto;
   }
  }
