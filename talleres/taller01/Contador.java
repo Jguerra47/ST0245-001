@@ -24,13 +24,20 @@ public class Contador {
      *
      *(opcional: se podria pasar un parametro "cantidad" para incrementar esa cantidad de unidades).
      */
-    public void incrementar() {
-	this.cuenta++;
+    public void incrementar(int cantidad){
+	for(int i=0; i<cantidad;i++){
+            this.cuenta++;
+        }
     }
-
+    
     /*
     Se podría implementar un metodo decrementar para hacer la operacion inversa de incrementar.
     */
+    public void incrementar(int cantidad){
+	for(int i=0; i<cantidad;i++){
+            this.cuenta--;
+        }
+    }	
 
     /**
      * El método incrementos nos muestra en que valor se encuentra la cuenta actualmente.
@@ -39,7 +46,6 @@ public class Contador {
     public int incrementos() {
 	return this.cuenta;
     }
-
     
      /**
     * toString se encargará de convertir el contador en un tipo cadena
