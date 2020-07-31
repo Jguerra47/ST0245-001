@@ -33,7 +33,7 @@ public class Contador {
     /*
     Se podría implementar un metodo decrementar para hacer la operacion inversa de incrementar.
     */
-    public void incrementar(int cantidad){
+    public void decrementar(int cantidad){
 	for(int i=0; i<cantidad;i++){
             this.cuenta--;
         }
