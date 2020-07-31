@@ -2,7 +2,7 @@
 /**
  * La clase Contador tiene la intención de representar un contador.
  * 
- * @author Mauricio Toro, Andres Paez
+ * @author Mauricio Toro, Andres Paez, Jacobo Rave, Sebastián Guerra
  * @version 1
  */
 
@@ -10,13 +10,13 @@ public class Contador {
     
 	private int cuenta;
 	private final String id;
-
-
+	
 	/**
      * Se inicializan las variables globales en el constructor de manera que no posean valores nulos o 0s.
      */
-    public Contador() {
-
+    public Contador(String text) {
+	this.id=text;
+        this.cuenta=0;
     }
 
     /**
@@ -25,7 +25,7 @@ public class Contador {
      *(opcional: se podria pasar un parametro "cantidad" para incrementar esa cantidad de unidades).
      */
     public void incrementar() {
-
+	this.cuenta++;
     }
 
     /*
@@ -37,7 +37,7 @@ public class Contador {
      * @return el numero actual de la cuenta
      */
     public int incrementos() {
-
+	return this.cuenta;
     }
 
     
@@ -49,6 +49,8 @@ public class Contador {
     * @return una cadena que contiene el id del contador y su cuenta
     */
     public String toString() {
-
+	String texto = "ID del contador: "+this.id;
+        texto = texto +"\nCuenta -> "+this.cuenta;
+        return texto;
     }
 }
