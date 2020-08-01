@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
     	
      System.out.println("--------------------------------MENÚ--------------------------------");
-     System.out.println("Ejecutar contador: 1, Ejecutar Fichero Puntos2D: 2, Ejecutar Fechas: 3");
+     System.out.println("Ejecutar contador: 1, Ejecutar Fichero Puntos2D: 2, Ejecutar Fechas: 3, Ejecutar Linea2D: 4");
      Scanner r = new Scanner(System.in);
      int opción = r.nextInt();
      
@@ -19,6 +19,9 @@ public class Main {
     	 
      case 3:
     	 Fecha(); break;
+    	 
+     case 4:
+    	 Linea2D(); break;
     	 
        default:
     	   System.out.println("Numero incompatibel, Hasta luego!");
@@ -89,9 +92,24 @@ public class Main {
         Fecha f2 = new Fecha(2, 5, 2016);
         System.out.println(f1);
         System.out.println(f2);
+        
         // 1
         System.out.println(f1.compararFechas(f2));
     	
     	
+    }
+    
+    /*
+	 * Profe pruebe con estos puntos (1,1) y (15,8)
+	 * 
+	 * 
+	 * */
+    private static void Linea2D() {
+    	
+    	
+    	Punto p1 = new Punto(0,0);
+    	Punto p2 = new Punto(3,3);
+    	Linea2D linea = new Linea2D(p1,p2);
+    	linea.EncontrarPuntos();
     }
 }
