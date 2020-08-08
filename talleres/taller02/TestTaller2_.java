@@ -1,7 +1,3 @@
-package Taller2;
-
-
-
 public class TestTaller2_ {
 
 	
@@ -30,20 +26,20 @@ public class TestTaller2_ {
 	
 	
 	public static void ejercicio3(){
-		System.out.println("Para la cadena 'abc' el resultado debe ser similar a:");
-		System.out.println("a, ab, abc, ac, b, bc, c\n");
+		//System.out.println("Para la cadena 'abc' el resultado debe ser similar a:");
+		//System.out.println("a, ab, abc, ac, b, bc, c\n");
 		Taller2.combinations("abc");
 
-		System.out.println("Para la cadena 'Eafit' el resultado debe ser similar a:");
-		System.out.println("E, Ea, Eaf, Eafi, Eafit, Eaft, Eai, Eait, Eat, Ef, Efi, Efit, Eft, Ei, Eit, Et, a, af, afi, afit, aft, ai, ait, at, f, fi, fit, ft, i, it, t\n");
+		//System.out.println("Para la cadena 'Eafit' el resultado debe ser similar a:");
+		//System.out.println("E, Ea, Eaf, Eafi, Eafit, Eaft, Eai, Eait, Eat, Ef, Efi, Efit, Eft, Ei, Eit, Et, a, af, afi, afit, aft, ai, ait, at, f, fi, fit, ft, i, it, t\n");
 		Taller2.combinations("Eafit");
 		
-		System.out.println("Para la cadena 'Hola' el resultado debe ser similar a:");
-		System.out.println("H, Ho, Hol, Hola, Hoa, Hl, Hla, Ha, o, ol, ola, oa, l, la, a\n");
+		//System.out.println("Para la cadena 'Hola' el resultado debe ser similar a:");
+		//System.out.println("H, Ho, Hol, Hola, Hoa, Hl, Hla, Ha, o, ol, ola, oa, l, la, a\n");
 		Taller2.combinations("Hola");
 
-		System.out.println("Para la cadena 'Hi' el resultado debe ser similar a:");
-		System.out.println("H, i, Hi\n");
+		//System.out.println("Para la cadena 'Hi' el resultado debe ser similar a:");
+		//System.out.println("H, i, Hi\n");
 		Taller2.combinations("Hi");
 	}
 	
