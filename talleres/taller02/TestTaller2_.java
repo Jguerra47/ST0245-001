@@ -16,9 +16,20 @@ public class TestTaller2_ {
 	public static boolean ejercicio2(){
 		boolean a, b, c, d;
 		a=Taller2.SumaGrupo(0,new int[] {2, 4, 8}, 9);
+		System.out.println(a);
 		b=Taller2.SumaGrupo(0,new int[] {2, 4, 8}, 8);
+		System.out.println(b);
 		c=Taller2.SumaGrupo(0,new int[] {10, 2, 2, 5}, 9);
+		System.out.println(c);
 		d=Taller2.SumaGrupo(0,new int[] {10, 2, 2, 5}, 17);
+		System.out.println(d);a=Taller2.SumaGrupo(0,new int[] {2, 4, 8}, 9);
+		System.out.println(a);
+		b=Taller2.SumaGrupo(0,new int[] {2, 4, 8}, 8);
+		System.out.println(b);
+		c=Taller2.SumaGrupo(0,new int[] {10, 2, 2, 5}, 9);
+		System.out.println(c);
+		d=Taller2.SumaGrupo(0,new int[] {10, 2, 2, 5}, 17);
+		System.out.println(d);
 		if(!a && b && c && d)
 			return true;
 		return false;
