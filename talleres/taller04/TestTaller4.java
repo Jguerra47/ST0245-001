@@ -1,10 +1,3 @@
-//package Taller4;
-
-/**
- *
- * @author
- */
-
 public class TestTaller4 {
 
 
