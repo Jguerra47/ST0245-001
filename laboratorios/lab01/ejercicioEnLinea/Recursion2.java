@@ -1,10 +1,10 @@
 /**
 * En esta clase se pueden encontrar todos los ejercicios de CodingBat - Recursion 2
 * @author Jacobo Rave y Sebastián Guerra
-* @version 1.0
+* @version 1.01
 */
 
-public class Recursion1{
+public class Recursion2{
 
 /**
 * El método groupSum5 busca una posible combinación de números que sumados den un target. Sin embargo, presenta las siguientes condiciones: si hay un número multiplo de 5 en
@@ -33,7 +33,7 @@ el arreglo, debe de estar en la combinación; si es múltiplo de 5 y en la sigui
   Autor: Ulm, G.
   Fecha: Marzo, 2013
   Versión del código: 1.0
-  Disponible en: https://gregorulm.com/codingbat-java-recursion-2/  
+  Disponible en: www.gregorulm.com/codingbat-java-recursion-2/  
   /
   
 /**
