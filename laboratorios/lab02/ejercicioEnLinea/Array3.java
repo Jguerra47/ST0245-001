@@ -1,4 +1,4 @@
-public class Array2
+public class Array3
 {
     public int maxSpan(int[] nums) {
         int span = 0;
