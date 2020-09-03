@@ -55,4 +55,43 @@ public class Array3
         }
         return clump;
     }
+    
+    public int[] fix34(int[] nums) {
+        for(int i = nums.length-1; i >= 0; i--){
+            if(nums[i] == 3){
+                for(int j = 0; j < nums.length; j++){
+                    if(nums[j] == 4 && nums[j-1]!=3){
+                        int aux = nums[i+1];
+                        nums[i+1] = nums[j];
+                        nums[j] = aux;
+                        break;
+                    }
+                }
+            }
+        }
+        return nums;
+    }
+
+    public int[] fix45(int[] nums) {
+        for(int i = nums.length-1; i >= 0; i--){
+            if(nums[i] == 4){
+
+                for(int j = 1; j < nums.length; j++){
+                    if((nums[j] == 5 && nums[j-1] != 4)){
+                        int aux = nums[i+1];
+                        nums[i+1] = nums[j];
+                        nums[j] = aux;
+                        break;
+                    }
+                    else if(nums[0] == 5){
+                        int aux = nums[i+1];
+                        nums[i+1] = nums[0];
+                        nums[0] = aux;
+                        break;
+                    }
+                }
+            }
+        }
+        return nums;
+    }
 }
