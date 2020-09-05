@@ -38,8 +38,12 @@ public class MiArrayList {
     /** 
      * @param e el elemento a guardar
      * Agrega un elemento e a la última posición de la lista
-     *
-     */
+     *     
+     * La complejidad de agregar n abejas es de O(n)
+     * Basado en las pruebas realizadas con los datasets podemos asegurar que este algoritmo es
+     * recomendable para el procesamiento de millones de abejas
+     * Probando con 2 millones de abejas la duración fue de 5 segundos
+     */  
     public void add(int e) {
         if (size == elements.length) {
             int[] otroArreglo = new int[elements.length*2];
@@ -47,7 +51,6 @@ public class MiArrayList {
                 otroArreglo[i] = elements[i];
             elements = otroArreglo;
         }
-
         elements[size] = e;
         this.size++; 
     }    // T(n) = O(n) 
@@ -66,12 +69,7 @@ public class MiArrayList {
     /**
      * @param index es la posicion en la cual se va agregar el elemento
      * @param e el elemento a guardar
-     * Agrega un elemento e en la posición index de la lista
-     *
-     * La complejidad de agregar n abejas es de O(n)
-     * Basado en las pruebas realizadas con los datasets podemos asegurar que este algoritmo es
-     * recomendable para el procesamiento de millones de abejas
-     * Probando con 2 millones de abejas la duración fue de 5 segundos.
+     * Agrega un elemento e en la posición index de la lista     
      */
     public void add(int index, int e) throws Exception {
         if (index > size || index < 0)   // O(1)
