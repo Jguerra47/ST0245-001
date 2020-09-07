@@ -6,8 +6,8 @@
 * Availability:https://www.baeldung.com/java-merge-sort
 */
  
-/*
-*Esta clase ordena una arreglo por merge sort
+/**
+* Esta clase ordena una arreglo por mergeSort
 *
 *
 */
@@ -15,7 +15,7 @@ public class MergeSort
 {
 
 /*
-*Est método divide el arreglo por la mitad n veces
+*Este método divide el arreglo por la mitad
 *@param int[]a recibe una arreglo 
 *@param n recibe la longitud del arreglo
 */
@@ -47,7 +47,7 @@ public class MergeSort
 *@param left la longitud del arreglo parte izquierda
 *@param rigth la longitud del arreglo parte derecha
 */
-    public static void merge(  int[] a, int[] l, int[] r, int left, int right) {
+    public static void merge(int[] a, int[] l, int[] r, int left, int right) {
  
     int i = 0, j = 0, k = 0;
     while (i < left && j < right) {
@@ -64,6 +64,4 @@ public class MergeSort
     while (j < right) {
         a[k++] = r[j++];
     }
-}
-
 }
