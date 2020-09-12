@@ -52,6 +52,15 @@ public class LinkedListJacSeb {
     public int size(){
         return this.size;
     }
+    
+    /**
+     * El método first devuelve la cabeza de la lista enlazada.
+     * @return first la cabeza de la lista enlazada.
+     */
+    public Node first(){
+        return this.first;
+    }
+
 
     /**
      * El metodo insert crea un nodo para ingresar un nuevo dato a la lista enlazada en determinada posicion.
