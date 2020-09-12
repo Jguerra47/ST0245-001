@@ -16,8 +16,8 @@ public class Taller7
     a.insert(1,2);
     a.insert(7,3);
     
-    int as = encontrarMayor(a);
-    System.out.println("El mayor es: "+ as) ;
+    int respuesta = encontrarMayor(a);
+    System.out.println("El mayor es: "+ respuesta) ;
     }
     
     public static int encontrarMayor(LinkedListJacSeb listaEnlazada){
