@@ -1,10 +1,11 @@
 
 /**
- * Write a description of class Taller7 here.
+ * La clase Taller7 contiene el método recursivo solicitado en el taller.
  * 
- * @author (Jacobo Rave y Sebastian Guerra) 
- * @version (a version number or a date)
+ * @author Jacobo Rave, Sebastian Guerra
+ * @version 1
  */
+
 public class Taller7
 {  
     public static void main(String args[]){
@@ -29,8 +30,7 @@ public class Taller7
         if(nodoActual==null){
             return mayor;
         }
-        else{
-           
+        else{           
             mayor=Math.max(nodoActual.data,mayor);
             return size(nodoActual.next,mayor);
         }
