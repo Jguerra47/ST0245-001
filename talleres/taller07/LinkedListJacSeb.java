@@ -69,7 +69,7 @@ public class LinkedListJacSeb {
      * @throws IndexOutOfBoundsException
      */
     public void insert(int data, int index) throws IndexOutOfBoundsException{
-        if (index < 0 || (index >= size ^ (size == 0 && index > 0)))
+        if (index < 0 || (index >= size && !(size == 0 && index > 0)) || (!(index >= size) && (size == 0 && index > 0)))
             throw new IndexOutOfBoundsException("Index: "+index);
 
         Node nuevo = new Node(data);
