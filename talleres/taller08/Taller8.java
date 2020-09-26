@@ -1,16 +1,16 @@
 import java.util.Stack;
-/*
+/**
  * La clase Taller8 contiene los métodos solicitados en el taller.
  * @author Jacobo Rave y Sebastian Guerra
  * @version 1
- */
+ **/
 class Taller8{
-    /*
+    /**
      * El metodo notacionPolacaInversa representa la forma en que se evaluan las
      * operaciones aritmeticas en los procesadores
      * @param la cadena con notacion polaca inversa
      * @return el resultado de la operacion
-     /
+     */
     public static int notacionPolacaInversa(String s){
         String simbolos = "+-/";
         Stack<Integer> pila = new Stack();
