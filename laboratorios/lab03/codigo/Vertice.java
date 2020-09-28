@@ -7,7 +7,7 @@ public class Vertice {
     
     /**
      *Este constructor inicializa el id
-     *@param long establece el id de un vertice
+     *@param id establece el id de un vertice
      */
     public Vertice(Long id) {
         this.id = id;
