@@ -37,6 +37,13 @@ public class LectorDatos
         return vertices;
     }   //Complejidad de O(n*m)
 
+    
+    /**
+ * La clase LectorDatos retoma los datos presentes en un txt y los organiza en diversas estructuras
+ * 
+ * @author Sebastian Guerra, Jacobo Rave, Mauricio Toro
+ * @version 2
+ */
     public static ArrayList<Tripla<Long, Long, Double>> leerArcos() {
         ArrayList<Tripla<Long, Long, Double>> arcos = new ArrayList<>();
         try{
