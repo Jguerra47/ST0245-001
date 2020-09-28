@@ -13,8 +13,8 @@ public class MapaCiudad
     /**
      *Este método asigna los elementos de los vertices y los añade al grafo
      *
-     *@param HashMap<Long, Vertice> vertices recibe un hashmap con su key y valor.
-     *@paramArrayList<Tripla<Long, Long, Double>> arcos recibe un Arraylist con una tripla con su x y z.
+     *@param vertices recibe un hashmap con su key y valor.
+     *@param arcos recibe un Arraylist con una tripla con su x y z.
      *
      */
     public void asignarElementos(HashMap<Long, Vertice> vertices, ArrayList<Tripla<Long, Long, Double>> arcos){        
