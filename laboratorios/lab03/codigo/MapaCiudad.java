@@ -1,9 +1,21 @@
 import java.util.*;
+
+/**
+ * La clase MapaCiudad toma los elementos del vertice, los añade a un grafo y encuentra la longitud entre dos vertices 
+ * 
+ * @author Sebastian Guerra, Jacobo Rave, Mauricio Toro
+ * @version 2
+ */
+
 public class MapaCiudad
 {
     private int size;
     public ArrayList<Tripla<Vertice, Vertice, Double>> grafo;
 
+    /**
+    * El constructor incializa el grafo, y asigna los elementos con su vertice y arco
+    *
+    */
     public MapaCiudad(HashMap<Long, Vertice> vertices, ArrayList<Tripla<Long, Long, Double>> arcos){
         this.grafo = new ArrayList<>();
         asignarElementos(vertices, arcos);
