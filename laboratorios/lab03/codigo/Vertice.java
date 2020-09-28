@@ -6,7 +6,7 @@ public class Vertice {
     //String name;
     
     /**
-     *Este constructor establece el id de un vertice
+     *Este constructor inicializa el id
      *@param long establece el id de un vertice
      */
     public Vertice(Long id) {
