@@ -4,8 +4,8 @@ import java.util.Arrays;
 /**
  * Write a description of class Main here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Sebastian Guerra, Jacobo Rave, Mauricio Toro)
+ * @version (2)
  */
 public class Main
 {
