@@ -2,24 +2,26 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Arrays;
 /**
- * Write a description of class Main here.
- *
- * @author (Sebastian Guerra, Jacobo Rave, Mauricio Toro)
- * @version (2)
+ * @author Sebastian Guerra, Jacobo Rave, Mauricio Toro
+ * @version 2
  */
 public class Main
 {
     public static MapaCiudad main(){
         HashMap<Long, Vertice> vertices = LectorDatos.leerVertices();
         ArrayList<Tripla<Long, Long, Double>> arcos = LectorDatos.leerArcos();
-        MapaCiudad mapita = new MapaCiudad(vertices, arcos);    
+        MapaCiudad medellin = new MapaCiudad(vertices, arcos);    
         
-        Double a = mapita.getDistancia(new Long(573427554), new Long(573427555)); //Debe dar 14.5973182469
-        System.out.println(a);
-        /*for(Tripla<Vertice, Vertice, Double> v : mapita.grafo){
+        Double a = medellin.getDistancia(new Long(573427554), new Long(573427555)); //Debe dar 14.5973182469
+        System.out.println("La distancia entre los dos vertices con los ID ingresados es de: " + a);
+        
+        /*
+        //Este ciclo permite ver todas los elementos que forman el grafo de Medellin
+        for(Tripla<Vertice, Vertice, Double> v : medellin.grafo){
             System.out.println(v.toStringJS());
-        }*/
+        }
+        */        
         
-        return mapita;
+        return medellin;
     }
 }
