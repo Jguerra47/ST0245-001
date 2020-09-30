@@ -20,7 +20,7 @@ public class TecladoRoto{
             char caracter = palabra.charAt(i);
             if(caracter == '[' || caracter == ']'){
                 if(!botonInicio){
-                    lista.addLast(cadena.toString());
+                    lista.add(cadena.toString());
                 }
                 else{
                     lista.addFirst(cadena.toString()); 
@@ -41,7 +41,7 @@ public class TecladoRoto{
         }
 
         if(!botonInicio){
-            lista.addLast(cadena.toString());
+            lista.add(cadena.toString());
         }
         else{
             lista.addFirst(cadena.toString());
