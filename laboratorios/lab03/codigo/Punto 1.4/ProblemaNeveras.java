@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.EmptyStackException;
 import java.util.Arrays;
 /**
- * La clase ProblemaNeveras contiene el algoritmos solicitado en el punto 1.4 del laboratorio 3.
+ * La clase ProblemaNeveras contiene el algoritmo solicitado en el punto 1.4 del laboratorio 3.
  * @author Jacobo Rave, Sebastian Guerra
  * @version 3
  */
