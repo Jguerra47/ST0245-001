@@ -2,31 +2,39 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+* La clase Lector contiene el metodo para leer un archivo CSV
+* @author Sebastian Guerra, Jacobo Rave
+* @version 2
+*/
 public class Lector{    
     public static void main(String[] args) {
         ArrayList<String[]> matriz = leerCSV();
-        int i = 0;
-        for(String[] a : matriz){
-            String[] fila = matriz.get(i);
-            i++;
-            System.out.println(Arrays.asList(fila));
-        }        
+        for(String[] a : matriz){           
+            System.out.println(Arrays.asList(a));
+        }
     }
-    
+
     public static ArrayList<String[]> leerCSV(){
         ArrayList<String[]> datos = new ArrayList<String[]>();
-        File archivo = new File("C:\\Users\\Jguerra\\Desktop\\Estructura de datos y algoritmos I\\4_test_balanced_135000.csv");
-
+        File archivo = new File("4_train_balanced_135000.csv");//4_train_balanced_135000.csv y 0_test_balanced_5000.csv
         try {
             Reader r = new FileReader(archivo);
             BufferedReader lector = new BufferedReader(r);
-            String linea = lector.readLine();
+            String linea;
+            int numFila = 0;
             while ((linea = lector.readLine())!=null){ //O(m)
-                datos.add(linea.split(";")); //O(m * n)
+                if(numFila != 0){
+                    datos.add(linea.split(";")); //O(m * n)
+                }
+                numFila++;
             } 
-        } catch (IOException e) {
+            lector.close();
+        } 
+        catch (IOException e) {
             e.getMessage();
         }
         return datos;
-    } //Complejidad de O(m * n)
+    }   //Complejidad de O(m * n)    
+    
 }
