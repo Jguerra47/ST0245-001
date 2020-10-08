@@ -3,6 +3,9 @@ import java.util.ArrayList;
 import java.util.*;
 import java.io.*;
 
+/**
+* @author Sebastian Guerra, Jacobo Rave
+*/
 public class Main
 {
     public static void main(String[] args) throws Exception{
