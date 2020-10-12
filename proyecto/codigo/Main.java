@@ -1,50 +1,66 @@
 import javafx.util.Pair;
-import java.util.ArrayList;
 import java.util.*;
 import java.io.*;
-
 /**
 * @author Sebastian Guerra, Jacobo Rave
+* @version 2
 */
 public class Main
 {
     public static void main(String[] args) throws Exception{
-        ArrayList<String[]> m = Lector.leerCSV();
+        ArrayList<String[]> m = Lector.leerCSV(); //m*n + n^2 + m + n
+        ArrayList<Pair<Pair<String[][],String[][]>, String>> mejoresParejasDeColumna = new ArrayList();
         String[][] matriz = new String[m.size()][m.get(0).length];
 
         for (int i = 0; i < matriz.length; i++) {  
             matriz[i] = m.get(i);
         }
 
-        int iteradorColumna = 6;
+        int iteradorColumna = 8; //Acá va la columna sobre la que deseas saber la mejor condicion y su ponderado.
         float impurezaPonderada = 0;
+
         ArrayList<Object> respuestas = posiblesValores(matriz, iteradorColumna);
-        for(int s = 0; s < matriz.length; s++){
-            if(respuestas.get(s).getClass().getName().equals("java.lang.Float")){
-                float mediaAritmetica = ((Float)respuestas.get(0)).floatValue();
-                System.out.print("Condicion elegida: Promedio--> "+mediaAritmetica);
-                Pair<String[][],String[][]> pareja = dividirUnaMatrizEnDosMatrices(matriz, iteradorColumna, mediaAritmetica);
-                impurezaPonderada = giniPonderado(pareja.getKey(), pareja.getValue(), iteradorColumna);
-                break;
-            }
-            else if(respuestas.get(s).getClass().getName().equals("java.lang.String")){
-                impurezaPonderada = determinarMinimaImpureza(respuestas, matriz, iteradorColumna);
-                break;
-            }
+        Pair<String[][],String[][]> pareja = null;
+        Pair<Pair<String[][],String[][]>, String> parejaYSuCondicion = null;
+        if(respuestas.get(0).getClass().getName().equals("java.lang.Float")){ 
+            float mediaAritmetica = ((Float)respuestas.get(0)).floatValue();
+            System.out.println("Condicion elegida: Promedio--> "+mediaAritmetica);
+            pareja = dividirUnaMatrizEnDosMatrices(matriz, iteradorColumna, mediaAritmetica); //O(n)
+            parejaYSuCondicion = new Pair(pareja, String.valueOf(mediaAritmetica));
         }
-        System.out.println("La impureza ponderada es: " + impurezaPonderada);
+        else if(respuestas.get(0).getClass().getName().equals("java.lang.String")){
+            parejaYSuCondicion = determinarMejorPareja(respuestas, matriz, iteradorColumna); //O(n^2)}
+        }
+
+        mejoresParejasDeColumna.add(parejaYSuCondicion);
+
+        for (Pair<Pair<String[][],String[][]>, String> p: mejoresParejasDeColumna) {  //O(m)
+            System.out.println("La impureza ponderada es: " + giniPonderado(p.getKey().getKey(), p.getKey().getValue(), iteradorColumna)+" con la condicion: "+ p.getValue());
+        }
+
     }
 
-    public static float determinarMinimaImpureza(ArrayList<Object> respuestas, String[][] matriz, int iteradorColumna){
+    public static Pair<Pair<String[][],String[][]>, String> determinarMejorPareja(ArrayList<Object> respuestas, String[][] matriz, int iteradorColumna){
         float minImpureza = 1;
+        Pair<String[][],String[][]> mejorPareja = null;
+        String mejorCondicion = null;
+        
         for(Object s: respuestas){
             String condicionEnCadena = (String)s;
             System.out.println("Condicion elegida: "+condicionEnCadena);
             Pair<String[][],String[][]> pareja = dividirUnaMatrizEnDosMatrices(matriz, iteradorColumna, condicionEnCadena);
-            minImpureza = (float)Math.min(minImpureza, giniPonderado(pareja.getKey(), pareja.getValue(), iteradorColumna));
+            float impurezaActual = (float)giniPonderado(pareja.getKey(), pareja.getValue(), iteradorColumna);
+            if(impurezaActual < minImpureza){
+                minImpureza = impurezaActual;
+                mejorPareja = pareja;
+                mejorCondicion = condicionEnCadena;
+            }
         } 
-        return minImpureza;
+        
+        return new Pair(mejorPareja, mejorCondicion);
     }
+
+    
     public static ArrayList<Object> posiblesValores(String[][] m, int posVariable){
         ArrayList<Object> respuestasDeVariable =  new ArrayList<>();
 
@@ -67,18 +83,19 @@ public class Main
                 }
             }
         }
-
         else{
-            respuestasDeVariable.add(calcularMediaDeAtributo(m, posVariable));
+            respuestasDeVariable.add(calcularMediaDeAtributo(m, posVariable)); //O(n)
         }
         return respuestasDeVariable;
     }
 
     public static float calcularMediaDeAtributo(String[][] m, int posVariable){
-        float sumaDeAtributo = 0;        
+        float sumaDeAtributo = 0;
+        float total = 0;
         for (String[] fila: m){
             if(!fila[posVariable].isEmpty()){
                 sumaDeAtributo += (float)Float.parseFloat(fila[posVariable]);  
+                total++;
             }
         }
         float media = sumaDeAtributo/m.length;
@@ -88,7 +105,7 @@ public class Main
     public static Pair<String[][],String[][]> dividirUnaMatrizEnDosMatrices(String[][] m, int posVariable, String valor){
         int varSIEsIgualAlValor = 0;
         int varNOEsIgualAlValor = 0;
-        
+
         for (String[] fila: m){  //for each #1
             if (fila[posVariable].equals(valor)){
                 varSIEsIgualAlValor++;
@@ -166,13 +183,13 @@ public class Main
     }
 
     public static float impurezaGiniDeUnaMatriz(String[][] m, int columnaActual){
-        int estudiantesWin = 0;
+        int estudiantesWin = 0; //0.44 
         int estudiantesFail = 0;
         int niIdea = 0;
         for(String[] fila: m){
             if (fila[77].equals("1")){
                 estudiantesWin++;
-            }
+            }//fila.length-1
             else if(!fila[columnaActual].isEmpty()){
                 estudiantesFail++;
             }
@@ -181,8 +198,7 @@ public class Main
         }
 
         System.out.println("Estos tuvieron exito de la prueba: " + estudiantesWin+" y estos no tuvieron exito de la prueba: " + estudiantesFail);
-        
-        
+
         float proporcionEstudiantesWin = (float)estudiantesWin/(estudiantesWin + estudiantesFail);      
         float proporcionEstudiantesFail = (float)estudiantesFail/(estudiantesWin + estudiantesFail);
 
