@@ -47,7 +47,7 @@ public class BinaryTree {
 
     //Busca en el arbol si existe un valor, devuelve true o false, dependiendo de si este o no
     private boolean buscarAux(Node node, Persona n) {
-        if (node.data == n) {
+        if (node.data.num == n.num) {
             return true;
         }
         if (node == null) {
@@ -112,7 +112,7 @@ public class BinaryTree {
 
             recursivePrintIN(node.right);
         }
-        
+
     }
 
     private void recursivePrintPRE(Node node)
@@ -150,6 +150,6 @@ public class BinaryTree {
         recursivePrintPRE(root);
         System.out.println();
         recursivePrintPOST(root);
-         
+
     }
 }
