@@ -22,6 +22,8 @@ public class mainn
     holaa.recursivePrint();
     System.out.println("}");
     System.out.print(holaa.buscar(new Persona(202720579,"juan")));
+    System.out.print(holaa.buscar(new Persona(301851227,"Daniel")));
+    System.out.print(holaa.buscar(new Persona(2,"juan")));
     
    
     
