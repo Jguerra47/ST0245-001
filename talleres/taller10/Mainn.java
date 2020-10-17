@@ -5,7 +5,7 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Mainn
+public class mainn
 {
    public static void main(String args[]){
     BinaryTree holaa = new BinaryTree();
@@ -20,7 +20,8 @@ public class Mainn
     holaa.insertar(new Persona(103305023,"Dan"));
     holaa.insertar(new Persona(202520799,"San"));
     holaa.recursivePrint();
-    System.out.print("}");
+    System.out.println("}");
+    System.out.print(holaa.buscar(new Persona(202720579,"juan")));
     
    
     
