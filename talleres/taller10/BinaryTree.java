@@ -107,7 +107,7 @@ public class BinaryTree {
         {   
             recursivePrintIN(node.left);
 
-            System.out.println(node.data.ToSring()); System.out.print("->");
+            System.out.println(node.data.ToSring());
 
             recursivePrintIN(node.right);
         }
