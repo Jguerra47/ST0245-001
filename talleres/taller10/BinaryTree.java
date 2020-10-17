@@ -49,8 +49,10 @@ public class BinaryTree {
     private boolean buscarAux(Node node, Persona n) {
         if (node.data.num == n.num) {
             return true;
-        }
-        if (node == null) {
+        }else if(node.data.num != n.num)
+            return false;
+            
+        if(node.data == null) {
             return false;
         }
         if (n.num > node.data.num) {
