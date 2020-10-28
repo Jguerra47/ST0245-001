@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import javafx.util.Pair;
 import java.io.*;
 /**
  * Implementacion de un grafo dirigido usando matrices de adyacencia
@@ -8,15 +7,23 @@ import java.io.*;
  */
 public class DigraphAM extends Digraph {
 
-    ArrayList<ArrayList<Integer>> matriz = new ArrayList<>();
+    ArrayList<ArrayList<Integer>> matriz;
 
     /**
      * Constructor para el grafo dirigido
      * @param vertices el numero de vertices que tendra el grafo dirigido
      *
      */
-    public DigraphAM(int size) {
-        super(size);
+    public DigraphAM(int vertices) {
+        super(vertices);
+        this.matriz = new ArrayList();
+
+        for(int i = 0; i < vertices; i++){
+            matriz.add(new ArrayList(12));
+            for(int j = 0; j < vertices; j++){                 
+                matriz.get(i).add(0);
+            }
+        }
     }
 
     /**
@@ -26,8 +33,8 @@ public class DigraphAM extends Digraph {
      * @param destination hacia donde va el arco
      * @param weight el peso de la longitud entre source y destination
      */
-    public void addArc(int source, int destination, int weight) {
-        matriz.get(source).add(destination,weight);
+    public void addArc(int source, int destination, int weight){
+        matriz.get(source).set(destination,weight);
     }
 
     /**
@@ -39,13 +46,18 @@ public class DigraphAM extends Digraph {
      * @see <a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html"> Ver documentacion ArrayList </a>
      */
     public ArrayList<Integer> getSuccessors(int vertex) {
-        ArrayList<Integer> sucesores  = new ArrayList<>();
-        ArrayList<Integer> Fila  = matriz.get(vertex);
+        ArrayList<Integer> sucesores = null;
+        ArrayList<Integer> fila = matriz.get(vertex);
 
-        for(Integer f: Fila){
-            int num = (int)f;
-            if(num==1){
-                sucesores.add(f);
+        for(int i=0; i < fila.size(); i++){
+            int num = (int)fila.get(i);
+
+            if(num != 0){
+                if(sucesores == null){
+                    sucesores  = new ArrayList<>();
+                }
+                sucesores.add(i);
+                System.out.println("Un sucesor de "+vertex+" es "+i);
             }
         }
         return sucesores;
@@ -55,16 +67,11 @@ public class DigraphAM extends Digraph {
      * Metodo para obtener el peso o longitud entre dos nodos
      * 
      * @param source desde donde inicia el arco
-     * @param destination  donde termina el arco
+     * @param destination donde termina el arco
      * @return un entero con dicho peso
      */ 
     public int getWeight(int source, int destination)  {
         int peso = matriz.get(source).get(destination);
-
-        if(peso==0){
-            System.out.print("No existe un arco con los nodos dados");
-        }
-
         return peso;
     }
 }
