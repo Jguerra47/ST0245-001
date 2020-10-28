@@ -2,8 +2,8 @@
 /**
  * Write a description of class Persona here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Jacobo Rave, Sebastian Guerra
+ * @version 1
  */
 public class Persona
 {
