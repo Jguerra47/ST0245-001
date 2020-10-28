@@ -1,22 +1,20 @@
-
 import java.util.*;
-import javafx.util.*;
 /**
  * Implementacion de un grafo dirigido usando listas de adyacencia
  *
- * @author Mauricio Toro, Mateo Agudelo, <su nombre>
+ * @author Mauricio Toro, Mateo Agudelo, Sebastian Guerra, Jacobo Rave
  */
 public class DigraphAL extends Digraph {
 
-    ArrayList<LinkedList<Pair<Integer,Integer>>> lista = new ArrayList<>();
+    LinkedList<Pair<Integer,Integer>> lista[];
     /**
      * Constructor para el grafo dirigido
      * @param vertices el numero de vertices que tendra el grafo dirigido
      *
      */
-    public DigraphAL(int size) {
-        super(size);
-
+    public DigraphAL(int vertices) {
+        super(vertices);
+        this.lista = new LinkedList[vertices]; 
     }
 
     /**
@@ -27,12 +25,10 @@ public class DigraphAL extends Digraph {
      * @param weight el peso de la longitud entre source y destination
      */
     public void addArc(int source, int destination, int weight) {
-
-        if(lista.get(source)==null){
-            lista.add(source,new LinkedList());
+        if(lista[source]==null){
+            lista[source] = new LinkedList();
         }
-
-        lista.get(source).add(new Pair(destination,weight));
+        lista[source].add(new Pair(destination,weight));
     }
 
     /**
@@ -45,24 +41,18 @@ public class DigraphAL extends Digraph {
      */
 
     public ArrayList<Integer> getSuccessors(int vertex) {
+        ArrayList<Integer> sucesores = null;
+        LinkedList<Pair<Integer, Integer>> filaSucesores = this.lista[vertex];
 
-        ArrayList<Integer> sucesores  = new ArrayList<>();
-        ArrayList<Integer> Fila ;
-        for(int i = 0 ; i<lista.size() ; i++){
-
-            if(lista.get(i).get(0).getKey().equals(vertex)){
-                Fila = lista.get(i).get(i);
-                break;
+        if (filaSucesores != null){
+            for(Pair p: filaSucesores){
+                if(sucesores == null){
+                    sucesores = new ArrayList<Integer>();
+                }
+                sucesores.add((Integer)p.first);  
             }
-
-        }
-
-        for(Integer f: Fila){
-            int num = (int)f;
-            if(num==1){
-                sucesores.add(f);
-            }
-        }
+            Collections.reverse(sucesores); //Para que sea equivalente a la lista del Test
+        }        
         return sucesores;
     }
 
@@ -73,14 +63,16 @@ public class DigraphAL extends Digraph {
      * @param destination  donde termina el arco
      * @return un entero con dicho peso
      */ 
-    public int getWeight(int source, int destination) {
-        int peso = lista.get(source).get(destination);
+    public int getWeight(int source, int destination){
+        LinkedList<Pair<Integer, Integer>> fila = this.lista[source];
 
-        if(peso==0){
-            System.out.print("No existe un arco con los nodos dados");
+        if(fila != null){
+            for(Pair p : fila)                
+                if((int)p.first == destination){
+                    return (int)p.second;
+                }
         }
 
-        return peso;
+        return 0;
     }
-
 }
