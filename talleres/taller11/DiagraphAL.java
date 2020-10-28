@@ -49,9 +49,8 @@ public class DigraphAL extends Digraph {
                 if(sucesores == null){
                     sucesores = new ArrayList<Integer>();
                 }
-                sucesores.add((Integer)p.first);  
-            }
-            Collections.reverse(sucesores); //Para que sea equivalente a la lista del Test
+                sucesores.add(0, (Integer)p.first);  
+            }            
         }        
         return sucesores;
     }
