@@ -19,7 +19,7 @@ public class DigraphAM extends Digraph {
         this.matriz = new ArrayList();
 
         for(int i = 0; i < vertices; i++){
-            matriz.add(new ArrayList(12));
+            matriz.add(new ArrayList(vertices));
             for(int j = 0; j < vertices; j++){                 
                 matriz.get(i).add(0);
             }
@@ -57,7 +57,7 @@ public class DigraphAM extends Digraph {
                     sucesores  = new ArrayList<>();
                 }
                 sucesores.add(i);
-                System.out.println("Un sucesor de "+vertex+" es "+i);
+                //System.out.println("Un sucesor de "+vertex+" es "+i);
             }
         }
         return sucesores;
@@ -67,7 +67,7 @@ public class DigraphAM extends Digraph {
      * Metodo para obtener el peso o longitud entre dos nodos
      * 
      * @param source desde donde inicia el arco
-     * @param destination donde termina el arco
+     * @param destination  donde termina el arco
      * @return un entero con dicho peso
      */ 
     public int getWeight(int source, int destination)  {
