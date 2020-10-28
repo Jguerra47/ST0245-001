@@ -1,7 +1,5 @@
 
-/**
- * Write a description of class Persona here.
- * 
+/** 
  * @author Jacobo Rave, Sebastian Guerra
  * @version 1
  */
