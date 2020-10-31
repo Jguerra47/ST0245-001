@@ -39,7 +39,7 @@ public class Taller12
     }
 
     /**
-     * El método pathDFS es la solución del segundo punto del taller.
+     * El método pathBFS es la solución del segundo punto del taller.
      * @param g el grafo en el que vamos a trabajar
      * @param source el nodo de donde parte la busqueda
      * @param destination el nodo al que se quiere llegar
@@ -75,7 +75,7 @@ public class Taller12
     }
 
     /**
-     * El método pathDFS es la solución del tercer punto del taller.
+     * El método printVertexDFS es la solución del tercer punto del taller.
      * @param g el grafo en el que vamos a trabajar
      * @param source el nodo de inicio
      */
@@ -104,7 +104,7 @@ public class Taller12
     }
     
     /**
-     * El método pathDFS es la solución del cuarto punto del taller.
+     * El método printVertexBFS es la solución del cuarto punto del taller.
      * @param g el grafo en el que vamos a trabajar
      * @param source el nodo de inicio
      * @see <a href="https://www.youtube.com/watch?v=pcKY4hjDrxk&t=507s"> Basado en la explicacion de Abdul Bari </a>
