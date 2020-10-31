@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
 /**
-* La clase Point2 contiene la adaptacion de lectura de preOrden a posOrden de un arbol de busqueda binario.
+* La clase Point21 contiene la adaptacion de lectura de preOrden a posOrden de un arbol de busqueda binario.
 * @author Sebastian Guerra, Jacobo Rave
 * @version 1
 */
-public class Point2 { 
+public class Point21 { 
     /**
     * La clase Node es la implementación de una estructura que contiene un dato y dos posibles hijos
     */
