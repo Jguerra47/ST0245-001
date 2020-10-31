@@ -12,8 +12,8 @@ public class Taller12
     /**
      * El método pathDFS es la solución del primer punto del taller.
      * @param g el grafo en el que vamos a trabajar
-     * @source el nodo de donde parte la busqueda
-     * @destination el nodo al que se quiere llegar
+     * @param source el nodo de donde parte la busqueda
+     * @param destination el nodo al que se quiere llegar
      * @return el valor booleano sobre si hay un camino
      */
     public static boolean pathDFS(Graph g, int source, int destination){
@@ -41,8 +41,8 @@ public class Taller12
     /**
      * El método pathDFS es la solución del segundo punto del taller.
      * @param g el grafo en el que vamos a trabajar
-     * @source el nodo de donde parte la busqueda
-     * @destination el nodo al que se quiere llegar
+     * @param source el nodo de donde parte la busqueda
+     * @param destination el nodo al que se quiere llegar
      * @return el valor booleano sobre si hay un camino
      */
     public static boolean pathBFS(Graph g, int source, int destination){
@@ -77,7 +77,7 @@ public class Taller12
     /**
      * El método pathDFS es la solución del tercer punto del taller.
      * @param g el grafo en el que vamos a trabajar
-     * @source el nodo de inicio
+     * @param source el nodo de inicio
      */
     public static void printVertexDFS(Graph g, int source){
         boolean [] checked = new boolean[g.size()+1];
@@ -106,7 +106,7 @@ public class Taller12
     /**
      * El método pathDFS es la solución del cuarto punto del taller.
      * @param g el grafo en el que vamos a trabajar
-     * @source el nodo de inicio
+     * @param source el nodo de inicio
      * @see <a href="https://www.youtube.com/watch?v=pcKY4hjDrxk&t=507s"> Basado en la explicacion de Abdul Bari </a>
      */
     public static void printVertexBFS(Graph g, int source){
